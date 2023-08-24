@@ -33,7 +33,7 @@
 }
 #content{
     margin-top: 60px;
-    height: 300vh;
+    height: 100vh;
     background-color:whitesmoke;
     margin-left:13%;
     margin-right: 13%;
@@ -43,6 +43,7 @@
     justify-content: center;
     position: relative;
     height: 145px;
+    
   
 }
 .clock-part .clock-surround{
@@ -61,7 +62,7 @@
     border-radius: 10px;
     border-bottom: transparent;
     color: #b6c7e7;
-    box-shadow: 15px 23px 89px -6px rgba(0,0,0,0.75);
+    box-shadow: 25px 24px 14px -10px #938d8d;
 }
 .close-icon{
     font-size: 20px;
@@ -92,7 +93,7 @@
     font-family: monospace;
     display: none; 
 }
-.sub-clock-icon:hover{
+.sub-clock-icon:hover, .contact-icon:hover{
     scale: 1.2;
     opacity: 0.6;
     cursor: pointer;
@@ -100,17 +101,19 @@
 }
 .bubble-part{
     overflow: hidden;
-    padding: 0 10%;
+    padding: 0 8%;
     margin-top:10%;
 }
 .bubble{
-    display: flex;
-    justify-content: end;
+    width: 100%;
 }
 .mr5per{
     margin-right: 5%;
     text-decoration: none;
+    display: inline-block;
+    margin-bottom: 5%;
 }
+
 .bubble-shaped{
     display: flex;
     justify-content: center;
@@ -154,8 +157,32 @@
 .bubble-title-container{
     text-align: center;
 }
-.bubble-part .bubble a:hover div:first-child{
+.bubble-part .bubble a:hover div:nth-child(1){
     background-color: #ccc;
     scale: 1.02;
     
+}
+#footer{
+    background-color: black;
+    color: #fff;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contact p{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.contact-icon {
+    font-size: 30px;
+    color: white;
+    margin-right: 8px;
+    margin-top: 8px;
 }
