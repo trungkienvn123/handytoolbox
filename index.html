@@ -20,14 +20,17 @@
                 <div class="sub-clock-icon" onclick="clockAppear()"><i class="fa fa-clock-o"></i></div>
                 <div class="search-btn"><i class="search-icon fa fa-search"></i></div>
                 <div class="sub-clock"><p id="subClock"></p></div>
+                <div class="close-icon" onclick="closeFunction()"><i class="fa fa-times"></i></div>
             </div>
         </div>
 
         <div id="content" style="padding-top: 2%;">
-            <div class="clock-part" id="clock-part">
-                <div class="clock-surround"><p id="clock"></p></div>
-                <div class="close-icon" onclick="myFunction()"><i class="fa fa-times"></i></div>
-            </div>
+            
+            <div class="clock">
+                <div id="hour" class="hand"></div>
+                <div id="minute" class="hand"></div>
+                <div id="second" class="hand"></div>
+              </div>
             <div class="bubble-part">
             <div class="bubble">
                  <!-- ctirl + k + c -->
