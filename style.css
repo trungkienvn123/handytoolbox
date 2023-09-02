@@ -41,7 +41,7 @@
 }
 #content{
     margin-top: 60px;
-    height: 100vh;
+    height: 150vh;
     background-color:whitesmoke;
     margin-left:13%;
     margin-right: 13%;
@@ -253,6 +253,7 @@
     .sub-clock-icon{
         display: none;
     }
+    
     
 }
 /* lower than 436px */
