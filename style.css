@@ -214,52 +214,42 @@
 }
 /* responsive section */
 
+/* 700px to 1000px */
+@media only screen and (min-width:43.75em) and (max-width:62.5em){
+    .bubble-shaped{
+        width: 100%;
+        height: 100%;
+    }
+    .mr5per{
+        width: 27%;
+        height: 100%;
+    }
+}
+/* 446px to 696px */
+@media only screen and (min-width:27.875em) and (max-width:43.5em){
+    .close-icon{
+        right: 12%;
+    }
+    .bubble-shaped{
+        width: 100%;
+        height: 100%;
 
-/* 915px to 1023px */
-@media only screen and (min-width: 57.1875em) and (max-width:63.9375em){
-.clock {
-    width: 170px;
-    height: 170px;
-}
-.bubble {
-    width: 70%;
-}
-.bubble-shaped{
-    width: 110px;
-    height: 135px
-}
-}
-/* 800px to 915px */
-@media only screen and (min-width:50em) and (max-width:57.1875em) {
-    .bubble {
-    width: 88%;
-}
-    .close-icon{
-        right: 12%;
     }
-}
-/* 438px to 799px */
-@media only screen and (min-width:27.375em) and (max-width: 49.9375em){
-    .close-icon{
-        right: 12%;
-    }
-}
-/* 437px to 739px */
-@media only screen and (min-width:27.3125em) and (max-width: 46.1875em){
-    .clock {
-    width: 130px;
-    height: 130px;
-}
-    .sub-clock-icon{
-        display: none;
+    .mr5per{
+        width: 44%;
+        height: 100%;
     }
     
-    
 }
-/* lower than 436px */
-@media only screen and (max-width:27.25em){
+/* lower than 445px (ok)*/
+@media only screen and (max-width:27.8125em){
     #content{
         height: 150vh;
+    }
+    .mr5per{
+        display: flex;
+        text-align: center;
+        justify-content: center;
     }
     .logo{
         font-size: 15px;
