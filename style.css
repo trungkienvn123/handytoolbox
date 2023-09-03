@@ -10,6 +10,7 @@
     text-decoration: none;
     display: inline-block;
     margin-bottom: 5%;
+    
 }
 
 #header{
@@ -18,6 +19,7 @@
     left: 0;
     right: 0;
     height: 50px;
+    z-index: 1;
 }
 #header .nav{
     overflow: hidden;
@@ -138,8 +140,8 @@
 .bubble-shaped{
     display: flex;
     justify-content: center;
-    width: 120px;
-    height:135px;
+    width: 100%;
+    height: 100%;
     background-color: white;
     overflow: hidden;
     border-radius: 10%;
@@ -213,13 +215,15 @@
     margin-top: 8px;
 }
 /* responsive section */
-
+/* 1001px above */
+@media only screen and (min-width:62.5625em){
+    .mr5per{
+        width:14%;
+        height: 150px;
+    }
+}
 /* 700px to 1000px */
 @media only screen and (min-width:43.75em) and (max-width:62.5em){
-    .bubble-shaped{
-        width: 100%;
-        height: 100%;
-    }
     .mr5per{
         width: 27%;
         height: 100%;
@@ -229,11 +233,6 @@
 @media only screen and (min-width:27.875em) and (max-width:43.5em){
     .close-icon{
         right: 12%;
-    }
-    .bubble-shaped{
-        width: 100%;
-        height: 100%;
-
     }
     .mr5per{
         width: 44%;
