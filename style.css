@@ -2,9 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
-
 .mr5per{
     margin-right: 5%;
     text-decoration: none;
@@ -12,7 +10,6 @@
     margin-bottom: 5%;
     
 }
-
 #header{
     position: fixed;
     top: 0;
@@ -32,7 +29,6 @@
     padding: 10px;
     font-size: 30px;
     font-weight: 400;
-
 }
 #header .search-btn{
     position: absolute;
@@ -86,7 +82,6 @@
   #second{background:red;}
  
   /* end clock part */
-
 .close-icon{
     font-size: 20px;
     position: absolute;
@@ -102,7 +97,6 @@
     rotate: 720deg;
     scale: 1.3;
 }
-
 .sub-clock-icon{
     position: absolute;
     right: 47px;
@@ -136,7 +130,6 @@
 .bubble{
     width: 100%;
 }
-
 .bubble-shaped{
     display: flex;
     justify-content: center;
@@ -175,7 +168,6 @@
     border-radius: 50%;
     background-color: rgb(236 240 241);
     margin-bottom: 10px;
-
 }
 .bubble-title-container{
     text-align: center;
@@ -186,7 +178,6 @@
     
 }
 /* footer section */
-
 #footer{
     background-color: black;
     color: #fff;
@@ -282,6 +273,5 @@
     .logo{
         display:none
     }
-    
+
 }
- 
