@@ -8,20 +8,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
-  rel="stylesheet"  type='text/css'>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  rel="stylesheet" type='text/css'>
     <script src="script.js"></script>
-     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
+    
+    <div id="addBubbleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa fa-plus-circle"></i> Thêm Công Cụ Mới</h3>
+                <span class="close" onclick="hideAddBubbleModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="bubbleForm">
+                    <label for="toolUrl">URL Trang Web *</label>
+                    <div class="rainbow-input-wrapper">
+                        <input type="text" id="toolUrl" name="toolUrl" placeholder="Ví dụ: https://example.com" required>
+                    </div>
+
+                    <label for="toolName">Tên Công Cụ *</label>
+                    <div class="rainbow-input-wrapper">
+                        <input type="text" id="toolName" name="toolName" placeholder="Ví dụ: Công Cụ Của Tôi" required>
+                    </div>
+
+                    <label for="imageUrl">URL Hình Ảnh</label>
+                    <div class="rainbow-input-wrapper">
+                        <input type="text" id="imageUrl" name="imageUrl" placeholder="Để trống nếu muốn dùng icon mặc định">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="cancel-btn" class="modal-btn" onclick="hideAddBubbleModal()">Hủy</button>
+                        <button type="submit" id="submit-btn" class="modal-btn">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="undoSelectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #e74c3c;"> 
+                <h3><i class="fa fa-undo"></i> Chọn Bubble Muốn Xóa</h3>
+                <span class="close" onclick="hideUndoSelectionModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p style="margin-bottom: 15px;">Chọn một công cụ đã thêm gần đây để hoàn tác (xóa).</p>
+                <div id="bubbleListContainer">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="modal-btn" onclick="hideUndoSelectionModal()">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div id="main">
         <div id="header">
             <div class="nav">
-                <div class="logo">𝚖𝚢𝚃𝚘𝚘𝚕𝚋𝚘𝚡</div>
-                <div class="sub-clock-icon" onclick="clockAppear()"><i class="fas fa-clock"></i></div>
-                <div class="search-btn"><i class="search-icon fa fa-search"></i></div>
-                <div class="sub-clock"><p id="subClock"></p></div>
-                <div class="close-icon" onclick="closeFunction()"><i class="fa fa-times"></i></div>
+                <div class="logo">𝚖ｙ𝚃oo𝚕𝚋ox</div>
+                
+                <div id="searchBar" class="header-search">
+                    <span class="search-icon"><i class="fa fa-search"></i></span>
+                    <input type="text" id="searchInput" onkeyup="filterBubbles()" placeholder="Tìm công cụ..." />
+                    <span class="clear-search" onclick="clearSearch()">×</span>
+                </div>
+                
             </div>
         </div>
         <div id="content" style="padding-top: 2%;">
@@ -30,21 +82,10 @@
                 <div id="hour" class="hand"></div>
                 <div id="minute" class="hand"></div>
                 <div id="second" class="hand"></div>
-              </div>
+            </div>
             <div class="bubble-part">
             <div class="bubble">
-                 <!-- ctirl + k + c -->
-                <!-- <a href="http://" target="_blank" class="mr5per">
-                    <div class="... bubble-shaped" >
-                        <div class="... bubble-container">
-                            <div class="img-container bubble-img-container"><img class="bubble-img" src="..." alt="..."></div>
-                            <div class="bubble-title-container"><div class="bubble-title">...</div></div>
-                        </div>
-                    </div>
-                </a>
-             -->
-                <!-- https://trungkienvn123.github.io/mytoolbox.github.io/ -->
-                <a href="https://gemini.google.com" target="_blank" class="mr5per">
+                 <a href="https://gemini.google.com" target="_blank" class="mr5per">
                     <div class="bard bubble-shaped" >
                         <div class="bard bubble-container">
                             <div class="img-container bubble-img-container"><img class="bubble-img" src="img/bard-img.jfif" alt="Gemini"></div>
@@ -127,25 +168,26 @@
                         </div>
                     </div>
                 </a>
-
-            </div>
+                 </div>
 
             </div>
         </div>
         
-    </div>
-    <div id="footer">
-        <div class="contact">
-            <p>CONTACT</p>
-            <a href="https://github.com/trungkienvn123/" target="_blank"><i class="fa fa-github contact-icon"></i></a>
-            <a href="https://mail.google.com/mail/u/0/?ogbl#inbox/" target="_blank"><i class="fa fa-envelope fa-blue contact-icon"></i></a>
-            <a href="https://trungkienvn123.github.io/DeleteCommas/" target="_blank"><i class="fa fa-wrench contact-icon"></i></a>
+        <div id="footer">
+            <div class="contact">
+                <p>CONTACT</p>
+                <a href="https://github.com/trungkienvn123/" target="_blank"><i class="fa fa-github contact-icon"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?ogbl#inbox/" target="_blank"><i class="fa fa-envelope fa-blue contact-icon"></i></a>
+                <a href="https://trungkienvn123.github.io/DeleteCommas/" target="_blank"><i class="fa fa-wrench contact-icon"></i></a>
+            </div>
         </div>
     </div>
     
-   
-    
-</body>
-<script> 
-</script>
+    <div id="add-btn" class="floating-btn" onclick="showAddBubbleModal()">
+        <i class="fa fa-plus"></i>
+    </div>
+    <div id="undo-btn" class="floating-btn" onclick="undoLastBubble()">
+        <i class="fa fa-undo"></i>
+    </div>
+    </body>
 </html>
